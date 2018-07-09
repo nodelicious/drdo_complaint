@@ -2,11 +2,17 @@
 session_start();
  if(isset($_SESSION["uname"]))
  {
- if((time()-$_SESSION['lastlogin']) > 900)
- {
-	 header('location:logout.php');
- }
 
+if(isset($_SESSION["loggedAt"])){
+    header('page2.php');
+}
+if((time()-$_SESSION['loggedAt']>900)){
+    echo "<script> alert('You are logged out');</script>";
+    unset($_SESSION['uname'],$_SESSION['loggedAt']);
+    header('ind.php');
+}else{
+    $_SESSION['loggedAt']=time();
+}
  }
 ?>
 
