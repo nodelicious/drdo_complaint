@@ -22,6 +22,8 @@ background-color:white;
  h1{
       background-color: black;
       color: white;
+	  padding-bottom:20px;
+	  padding-top:10px;
     
 
      }
@@ -40,6 +42,11 @@ table,td,tr{
   
 
 }
+.container{
+background-image: url("tile.jpeg");
+opacity:0.9;
+
+}
 .table{
 color:black;
 	border-color:black;
@@ -52,10 +59,10 @@ color:black;
 .box{
 	background-color:lavender;
 	border-style:solid;
-	border-color:blue;
+	border-color:black;
 	border-width:8px;
-	margin-left:320px;
-	margin-right:320px;
+	margin-left:140px;
+	margin-right:140px;
 	padding-left: 100px;
 	padding-right: 100px;
 	
@@ -100,11 +107,59 @@ textarea{
 	width: 100%;
 	
 }
+.logo img{
+  display: block;
+  height: 100px;
+  width: 100px;
+  float: left;
+  }
 hr{
 	width: 600px;
 	border-width: 5px;
 	border-color: red;
 }
+body{
+ background: linear-gradient(to bottom,green,lightblue,green);
+}
+h3{
+color:red;
+}
+.text{
+background-color:#00CC99;
+border:solid;
+border-color:#000000;
+
+
+}
+    h4{
+      background-color: black;
+      color: white;
+      opacity: 1;
+		padding-top:20px;
+		padding-bottom:20px;
+     }
+	 .footer{
+	 padding-top:2px;
+	  background-color:#33CCFF;
+      color: white;
+      opacity: 1;
+		padding-bottom:20px;
+	 }
+  h4{
+      background-color: black;
+      color: white;
+      opacity: 1;
+		padding-top:20px;
+		padding-bottom:20px;
+     }
+	 .footer{
+	 padding-top:2px;
+	  background-color:#33CCFF;
+      color: white;
+      opacity: 1;
+		padding-bottom:20px;
+	 }
+
 
 </style>
  <SCRIPT LANGUAGE="JAVASCRIPT">
@@ -121,53 +176,58 @@ hr{
 </head>
 <body>
 <?php
-session_start();
- 
+ $userid=$_POST['userid'];
+ $userpass=$_POST['userpass'];
+
 	   $reqno=$_POST['req'];
-	$conn =mysqli_connect ("localhost","root","");
-mysqli_select_db($conn,"login");
+	$connection='DRIVER={SQL SERVER};SERVER=lasteclab;dsn=mis;database=mis';
+$user='mis';
+$pass='mis';
+$conn=odbc_connect($connection, $user, $pass);
 
 
-	   $sql="select * from users2 where users2.reqno='$reqno' ";
+	   $sql="select * from user_complaint where reqno='$reqno' ";
 
-	$userquery=mysqli_query($conn,$sql);
-	if(mysqli_num_rows($userquery) !=1)
-	{
-		die("that username could not be found");
-	}
-	
-	else{ 
-	while($row=mysqli_fetch_array($userquery, MYSQLI_ASSOC)){
+	$result=odbc_exec($conn,$sql);
+	while(odbc_fetch_row($result)){
 		
-		$name=$row['name'];
-		$designation=$row['designation'];
-		$groupname=$row['groupname'];
-		$extensionno=$row['extentionno'];
-		$sub=$row['subject'];
-		$department=$row['department'];
-		$description=$row['description'];
-	  }}
+		$name=odbc_result($result,'name');
+		$designation=odbc_result($result, 'desig');
+		$extensionno=odbc_result($result, 'ext_no');
+		$sub=odbc_result($result, 'subject');
+		$description=odbc_result($result, 'description');
+	  }
 	
 
 ?>
-<h1><big><img  src="drdo.png"  class="img-circle">&nbsp;&nbsp;&nbsp;&nbsp;<b>LASER SCIENCE AND TECHNOLOGY CENTER</b></big></h1>
-<br>
-<br>
-<div class="box">
-<h2><b><center>COMPLAINT REGISTRATION FORM</center></b></h2>
+<h1><big><div class="logo"><img  src="logo.png"  class="img-circle"></div><center>&nbsp;&nbsp;&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; &#2324;&#2352; &#2346;&#2381;&#2352;&#2380;&#2342;&#2381;&#2351;&#2379;&#2327;&#2367;&#2325;&#2368;  &#2325;&#2375;&#2306;&#2344;&#2381;&#2342;&#2381;&#2352;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;<b>GRIEVANCE REDRESSAL SYSTEM</b></center></big></h1>
 
-<hr>
+<br>
+<div class= "container"><br>
+<div class="box"><br>
+<div class="text"><h2><b><center>
+      <br>
+      <b>शिकायत पंजीकरण फॉर्म </b><br>
+      COMPLAINT REGISTRATION FORM
+</center></b></h2></div>
+
 <center>
-<h3><center><B>USER DETAILS</CENTER></B></H3>
+<h3><center>
+  उपयोगकर्ता विवरण<B><br>
+<B><br>
+USER DETAILS</CENTER></B></H3>
 <BR>
 
  
  
  <form action="mailbox.php" method="POST"> 
+ <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?= $userid;?>" >
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<td>NAME</td>
+<td><b>नाम<br>
+  NAME</b></td>
 <td>
 <?php  echo $name; ?>
 </td>
@@ -175,41 +235,40 @@ mysqli_select_db($conn,"login");
 </div>
 <div class="row2">
 <tr>
-<td>DESIGNATION</td>
+<td><b>पद<br>
+  DESIGNATION</b></td>
 <td><?php  echo $designation; ?>
 </td>
 </tr>
 </div>
+
 <tr>
-<td>GROUP NAME</td>
-<td> <?php  echo $groupname; ?></td>
-</tr>
-<tr>
-<td>EXTENSION NUMBER</td>
+<td><p>&nbsp;</p>
+  <p><b>विस्तार संख्या EXTENSION NUMBER</b></p></td>
 <td> <?php  echo $extensionno ; ?></td>
 </tr>
 </table></center>
 <br>
 <center>
-<h3><center><B>COMPLAINT DETAILS</CENTER></B></H3>
+<h3><center>
+  शिकायत विवरण<B>    <br>
+    <B>COMPLAINT DETAILS</CENTER></B></H3>
 <br>
 
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<td>SUBJECT</td>
+<td><b>विषय<br>
+  SUBJECT</b></td>
 <td><?php  echo $sub ; ?></td>
 </tr>
 </div>
 <div class="row2">
-<tr>
-<td>DEPARTMENT</td>
 
-<td><?php  echo $department ; ?></td>
-</tr>
 </div>
 <tr>
-<td>DESCRIPTION</td>
+<td><b>विवरण<br>
+  DESCRIPTION</b></td>
 <td><?php  echo $description ; ?></td>
 </tr>
 
@@ -222,33 +281,34 @@ mysqli_select_db($conn,"login");
 <table class="table table-bordered">
 <div class="row1">
 <tr>
- <td>ACTION TAKEN</td>
+ <td><b>एक्शन टेकेन<br>
+   ACTION TAKEN</b></td>
  <td><select  name="status" >
   <option selected>-Select-</option>
-  <option value="ACCEPTED" method="post">ACCEPTED</option>
+  <option value="ACCEPTED" method="post">ACCEPTED/</option>
   <option value="REJECTED" method="post">REJECTED</option>
 </select>
 </td>
 <input type ="hidden" name="reqno" value="<?php  echo $reqno ; ?>">
 </tr>
 <tr>
-<td>REMARKS</td>
+<td><b>रेमार्क<br>
+  REMARKS</b></td>
 <td>
 <textarea rows="3" method="post" name="remark"></textarea></td>
 </tr>
 
-</form>
 
 
 
 
 </table>
-</center></form>
-<center><td><input type="submit" class="btn btn-3" name="Back" value="Back" onClick="parent.open('mailbox.php')"></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<td><input type="button" class="btn btn-3" name="Exit" value="Exit"></td></center>
+</center><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
+<center><input type="submit" class="btn btn-3" name="SUBMIT" value="Back" ></center><center>
+</form>
 </div>
 <br>
+</div><br>
 </div>
-
-</body>
+</body><center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
 </html>

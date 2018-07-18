@@ -109,7 +109,7 @@ color:red;}
 <h2><b><center>
     
       <b> &#2350;&#2375;&#2354; &#2348;&#2379;&#2325;&#2381;&#2360;</b>      <br>
-    MAILBOX
+    COMPLAINTS
 </center></b></h2> </div><br>
 <div class="container"><br>
 <table align="center" class="table table-hover">
@@ -138,6 +138,7 @@ color:red;}
 <tbody>
 <tr class="success">
 <?php
+$dateentered=$_POST['date'];
 $userid=$_POST['userid'];
   $userpass=$_POST['userpass'];
 $connection='DRIVER={SQL SERVER};SERVER=lasteclab;dsn=mis;database=mis';
@@ -151,7 +152,8 @@ $remark=$_POST['remark'];
 $sql="update user_complaint set status='$status',remark='$remark' where reqno='$reqno';";
 $result=odbc_exec($conn, $sql);
 }
-$sql="select * from user_complaint where fwd='$userid' order by reqno desc;";
+
+$sql="select * from user_complaint where user_complaint.date='$dateentered' order by reqno desc;";
 $result=odbc_exec($conn, $sql);
 $sno=0;
 while(odbc_fetch_row($result))
@@ -208,7 +210,7 @@ echo "<td>";
 </table>
 </div>
 <center>
-<form method="POST" action="page2.php">
+<form method="POST" action="sortbydate.php">
   <input type="submit" name="Back" value="Back"  class="btn btn-3">
   <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
 </form>

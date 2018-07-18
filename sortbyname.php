@@ -87,22 +87,26 @@ background-color:white;
 
 </head>
 <body>
-<meta http-equiv="Content-Type" content="text/css" charset="UTF-8">
+<?php $userid=$_POST['userid'];
+  $userpass=$_POST['userpass'];?>
+
 <div class="header">
  <big><div class="logo"> <img  src="logo.png" height="80px" width="100px" class="img-circle" align="left"></div>
-  <h1><center><b><u>&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; &#2324;&#2352; &#2346;&#2381;&#2352;&#2379;&#2342;&#2381;&#2351;&#2379;&#2327;&#2367;&#2325;&#2368; &#2325;&#2375;&#2306;न्&#2342;&#2381;&#2352;&nbsp;&nbsp;&nbsp;<b><br>GRIEVANCE REDRESSAL SYSTEM</u></b></center></h1>
+  <h1><center><b><u>&nbsp;&nbsp;&nbsp;<b><br>GRIEVANCE REDRESSAL SYSTEM</u></b></center></h1>
 <br>
 </div>
   <div class="container theme-showcase" role="main">
 <div class="jumbotron">
-<center><h2 class="display-4"><b>You are not a valid user</b></h2></center>
-<center><img src="images1.jpg" height="100" width="150"></center>
+<center><h2 class="display-4"><b>ENTER THE NAME</b></h2></center>
+<center><form action="sortbyname2.php" method="POST"> <input type="text" name="name" method="POST"   required /><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" ><input type="submit" name="submit" value="submit" class="btn btn-3"></form></center>
 </div>
 
 
 <center><b>
-<input type="button" class="btn btn-3" name="Try Again" value="Try Again" onClick="parent.open('ind.php')"></b>
-</center><br>
+<form method="POST" action="report.php">
+  <input type="submit" name="Back" value="Back"  class="btn btn-3">
+  <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
+</form>
 
 </div>
 </body> <br><br><br><br><br><br><br> <br><br><br><br><br><center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>

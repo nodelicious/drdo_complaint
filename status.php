@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="c.jpg">
-    <title>DRDO</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-     <link href="theme.css" rel="stylesheet">
-    <link href="css/hello.css" rel="stylesheet">
-     <link rel="icon" href="c.jpg" type="image/gif" sizes="15*15">
-     <style type="text/css">
+    <meta http-equiv="Content-Type" content="text/css" charset="UTF-8">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="viewport" content="width=device-width ,initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+ <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="jquery/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="jquery1.css">
+  <script src="jquery2.js"></script>
+  <script src="jquery3.js"></script>
     
-     
+     <style>
+	  h4{
+      background-color: black;
+      color: white;
+      opacity: 1;
+		padding-top:20px;
+		padding-bottom:20px;
+     }
+	 .footer{
+	 padding-top:2px;
+	  background-color:#33CCFF;
+      color: white;
+      opacity: 1;
+		padding-bottom:20px;
+	 }
  
      h1{
       background-color: black;
       color: white;
       opacity: 0.9;
+	    padding-top:20px;
+	  padding-bottom:20px;
+    
 
      }
      h2{
@@ -49,65 +69,127 @@
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
 
-body {
-  
-    background: blue; 
-    background: linear-gradient(to right, lightblue , white); 
+body{
+
+  background: linear-gradient(to bottom,green,lightblue,green);
 }
-table, th,tr,td{
+table,tr,td{
     border: 3px solid black;
 
 	
     margin-left: auto;
     margin-right: auto;
 }
+th{border: 3px solid black;
+color:red;
+align:center;}
+     .btn1 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
 
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+     .btn2 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+     .btn3 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+.logo img{
+  display: block;
+  height: 100px;
+  width: 100px;
+  float: left;
+ 
+}
+.container{
+background: linear-gradient(to right,lightblue,white,lightblue);
+margin-left: auto;
+    margin-right: auto;
+}
+.status{
+margin-left:420px;
+margin-right:420px;
+background-color:#FFCC33;
+border:solid;
+border-color:#000000;
+}
      </style>
-     </head>
-<h1><big><img  src="drdo.png"  class="img-circle">&nbsp;&nbsp;&nbsp;&nbsp;<b>LASER SCIENCE AND TECHNOLOGY CENTER</b></big></h1>
+</head>
+<h1><big><div class="logo"><img  src="logo.png"  class="img-circle"><center>&nbsp;&nbsp;&nbsp;&nbsp;&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; &#2324;&#2352;&#2346;&#2381;&#2352;&#2380;&#2342;&#2381;&#2351;&#2379;&#2327;&#2367;&#2325;&#2368;  &#2325;&#2375;&#2306;&#2344;&#2381;&#2342;&#2381;&#2352;&nbsp;&nbsp;&nbsp;<br>
+<b>GRIEVANCE REDRESSAL SYSTEM</b></b></big></div></h1>
 <br>
-<h2><b><center>STATUS</center></b></h2>
+<b><center><div class="status"><h2>
+          &#2341;&#2340;&#2367;<br>
+   <b> STATUS</b>
+</center></b></h2></h2></div><br>
 <div class="container">
+<br>
 <table align="center" class="table table-hover">
 <thead>
 <tr>
 <th size="18"align="center">S.no</td>
 <th align="center">Complaint no</th>
-<th align="center">Name</th>
-<th align="center">Department</th> 
-<th align="center">Designation</th> 
-<th align="center">Date of complaint</th>
-<th align="center">Subject</th>
+<th align="center">&#2344;&#2366;&#2350;<br>
+  Name</th>
+
+<th align="center">&#2346;&#2342;<br>
+  Designation</th> 
+<th align="center">&#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2325;&#2367; &#2340;&#2366;&#2352;&#2368;&#2325; <br>
+  Date of complaint</th>
+<th align="center"><br>
+  Subject</th>
 <th align="center">Status</th>
 
 <th align="center">No Of Days</th>
 <th align="center">View</th>
 </tr>
 </thead>
-</table>
-</div>
-
+<tr class="success">
 <?php
-session_start();
-  global $username;
-  
-  if(isset($_SESSION['uname']))
-{
-	//global $username;
-	$username=$_SESSION['uname'];
-	
-	}
-$conn=mysqli_connect("localhost","root","");
-mysqli_select_db($conn, "login");
-$sql="select * from users2 where users2.username='$username';";
-$result=mysqli_query($conn, $sql);
+
+ $userid=$_POST['userid'];
+  $userpass=$_POST['userpass'];
+$connection='DRIVER={SQL SERVER};SERVER=lasteclab;dsn=mis;database=mis';
+$user='mis';
+$pass='mis';
+$conn=odbc_connect($connection, $user, $pass);
+$sql="select * from user_complaint where user_complaint.Login_id='$userid' or user_complaint.fwd='$userid' order by reqno desc;";
+$result=odbc_exec($conn, $sql);
 $sno=0;
-while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
+while(odbc_fetch_row($result))
 {
   
-    $id=$row['reqno'];
+    $id=odbc_result($result,'reqno');
 $sno=$sno+1;
-$date= $row['date'];
+$date=odbc_result($result,'user_date');
 
 	
 	 $currdate=date('d/m/Y');
@@ -116,14 +198,14 @@ $date= $row['date'];
 	
 	 echo "<tr>";
 echo "<td>".$sno."</td>";
-	 echo "<td>".$row['reqno']."</td>";
-echo "<td>".$row['name']."</td>";
-echo "<td>".$row['department']."</td>";
-echo "<td>".$row['designation']."</td>";
-echo "<td>".$row['date']."</td>";
-echo "<td>".$row['subject']."</td>";
+	 echo "<td>".odbc_result($result,'reqno')."</td>";
+echo "<td>".odbc_result($result,'name')."</td>";
 
-echo "<td>".$row['status']."</td>";
+echo "<td>".odbc_result($result,'desig')."</td>";
+echo "<td>".odbc_result($result,'user_date')."</td>";
+echo "<td>".odbc_result($result,'subject')."</td>";
+
+echo "<td>".odbc_result($result,'status')."</td>";
 echo "<td>";
 	if ($diff >=10)
 	
@@ -140,13 +222,15 @@ echo "<td>";
 
 echo "<td>";
 	?>
-	<form method="POST" action="viewstatus.php">			
+	<form method="POST" action="viewstatus.php">	
+			<INPUT TYPE="HIDDEN" NAME="req" VALUE="<?=odbc_result($result,'reqno')?>" >	<INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
 				<p align="center">
 				<button type="submit" name="view" class="btn btn-success btn-md"/> 
 				<span class="glyphicon glyphicon-eye-open"></span>View MAIL</button></p>
-				<INPUT TYPE="HIDDEN" NAME="req" VALUE="<?=$id?>" >
+				
+				
 				</p>
-				</form>
+	</form>
 				<?php
 		echo "</td>";
 
@@ -154,7 +238,7 @@ echo "<td>";
 	echo "</tr>";
 	 }
 
-?> </form>
+?> 
 	 
 	
 				
@@ -175,18 +259,18 @@ echo "<td>";
 
 </table>
 
-<center>
-<input type="button" name="Back" value="Back" onClick="parent.open('page2.php')" class="btn btn-3">
 
+<center>
+<form method="POST" action="page2.php">
+  <input type="submit" name="Back" value="Back"  class="btn btn-3">
+  <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
+</form>
+ <input type="submit" name="logout" value="LOGOUT"  class="btn btn-3" onClick="logout.php">
 </center>
-           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/docs.min.js"></script>
-   
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
-   
+  </div>       
+   </p>
    
  
  </body>
-</html>
+  <center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
+ </html>
