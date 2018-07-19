@@ -1,3 +1,17 @@
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+           
+   
+   
+ 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -148,8 +162,8 @@ border-color:#000000;
      </style>
 </head>
 <h1><big>
-<div class="logo"><img  src="logo.png"  class="img-circle"><center>&nbsp;&nbsp;&nbsp; <b><big><big>आई.टी एवं आई.एस &#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2344;&#2367;&#2357;&#2366;&#2352;&#2339; &#2346;&#2381;&#2352;&#2339;&#2366;&#2354;&#2368;</big></big></b>&nbsp;&nbsp;&nbsp;<br>
-IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</b></big></div>
+        <div class="logo"><img  src="logo.png"  class="img-circle"><center>&nbsp;&nbsp;&nbsp;&nbsp;<b><big>आई.टी एवं आई.एस &#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2344;&#2367;&#2357;&#2366;&#2352;&#2339; &#2346;&#2381;&#2352;&#2339;&#2366;&#2354;&#2368;<br>
+                        IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</b></center></div></big>
 </h1>
 <br>
 <b><center><div class="status">
@@ -172,7 +186,7 @@ IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</b></big></div>
 
 <th align="center">&#2346;&#2342;<br>
   Designation</th> 
-<th align="center">शिकायत की तारीख एवं समय<br>
+<th align="center">शिकायत की तारीख एवं समय <br>
   Date  and Time of complaint</th>
 <th align="center"><b>विषय</b><br>
   Subject</th>
@@ -180,6 +194,7 @@ IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</b></big></div>
   Status</th>
 <th align="center"><b>कार्यवाई की तारीख़</b><br>
   Action taken on</th>
+
 <th align="center">देखें<br>
   View</th>
   <th align="center">प्रिंट<br>
@@ -188,15 +203,15 @@ IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</b></big></div>
 </thead>
 <tr class="success">
 <?php
-$date=$_POST['month'];
-$date1=date("m-Y",strtotime($date));
+$date=$_POST['year'];
+
  $userid=$_POST['userid'];
   $userpass=$_POST['userpass'];
 $connection='DRIVER={SQL SERVER};SERVER=lasteclab;dsn=mis;database=mis';
 $user='mis';
 $pass='mis';
 $conn=odbc_connect($connection, $user, $pass);
-$sql="select * from user_complaint where (user_complaint.Login_id='$userid' or user_complaint.fwd='$userid') and (user_complaint.user_date like '%$date1%') order by reqno desc;";
+$sql="select * from user_complaint where (Login_id='$userid' or fwd='$userid') and (user_date like '%$date%') order by reqno desc;";
 $result=odbc_exec($conn, $sql);
 $sno=0;
 while(odbc_fetch_row($result))
@@ -204,32 +219,28 @@ while(odbc_fetch_row($result))
   
     $id=odbc_result($result,'reqno');
 $sno=$sno+1;
-$date=odbc_result($result,'user_date');
-$status=odbc_result($result, 'status');
-
-	//$date1=date('d-m-Y');
-	 //$currdate=date('d-m-Y');
-	 
-	// $diff=abs(strtotime($currdate)-strtotime($date1));
+$day=odbc_result($result,'user_date');
+	$reqno=odbc_result($result,'reqno');
+	$status=odbc_result($result,'status');
 	
 	 echo "<tr>";
 echo "<td>".$sno."</td>";
-	 echo "<td>".odbc_result($result,'reqno')."</td>";
+	 echo "<td>".$reqno."</td>";
 echo "<td>".odbc_result($result,'name')."</td>";
 
 echo "<td>".odbc_result($result,'desig')."</td>";
 echo "<td>".odbc_result($result,'user_date')."</td>";
 echo "<td>".odbc_result($result,'subject')."</td>";
 
-echo "<td>".odbc_result($result,'status')."</td>";
+echo "<td>".$status."</td>";
 echo "<td>".odbc_result($result,'action_date')."</td>";
 	
 
 
 echo "<td>";
 	?>
-	<form method="POST" action="sortbymonthview.php">	
-			<INPUT TYPE="HIDDEN" NAME="req" VALUE="<?=odbc_result($result,'reqno')?>" >	<INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" ><INPUT TYPE="HIDDEN" NAME="month" VALUE="<?= $date?>" >				<p align="center">
+	<form method="POST" action="sortbyyearview.php">	
+			<INPUT TYPE="HIDDEN" NAME="req" VALUE="<?=$reqno?>" >	<INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" ><INPUT TYPE="HIDDEN" NAME="year" VALUE="<?= $date?>" >
 				<button type="submit" name="view" class="btn btn-success btn-md"/> 
 				<span class="glyphicon glyphicon-eye-open"></span>View MAIL</button></p>
 				
@@ -247,9 +258,6 @@ echo "<td>";
 	echo "</tr>";
 	}
 	?>
-
- 
-	 
 	
 				
 	
@@ -271,7 +279,7 @@ echo "<td>";
 
 
 <center>
-<form method="POST" action="sortbymonth.php">
+<form method="POST" action="sortbyyear.php">
   <input type="submit" name="Back" value="वापस / Back"  class="btn btn-3">
   <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
 </form>

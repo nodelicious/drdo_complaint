@@ -58,17 +58,20 @@ background-color:white;
 		padding-top:20px;
 		padding-bottom:20px;
      }
-	 .footer{
+.footer{
 	 padding-top:2px;
-	  background-color:#33CCFF;
+	
       color: white;
       opacity: 1;
 		padding-bottom:20px;
-	 }
-	 .logo img{
+		float: bottom;
+		bottom:0px;
+		width: 100%;
+			 }
+.logo img{
   display: block;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   float: left;
   margin-left:20px;
   margin-top:30px;
@@ -89,21 +92,28 @@ background-color:white;
 <body>
 <meta http-equiv="Content-Type" content="text/css" charset="UTF-8">
 <div class="header">
- <big><div class="logo"> <img  src="logo.png" height="80px" width="100px" class="img-circle" align="left"></div>
-  <h1><center><b><u>&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; &#2324;&#2352; &#2346;&#2381;&#2352;&#2379;&#2342;&#2381;&#2351;&#2379;&#2327;&#2367;&#2325;&#2368; &#2325;&#2375;&#2306;न्&#2342;&#2381;&#2352;&nbsp;&nbsp;&nbsp;<b><br>GRIEVANCE REDRESSAL SYSTEM</u></b></center></h1>
+ <big><div class="logo"> <img  src="logo.png" height="117" width="132" class="img-circle" align="left"></div>
+  <h1><center>
+    <p><b><br>
+        <big><big><b>आई.टी एवं आई.एस शिकायत निवारण प्रणाली </b></big></big></b><br>
+      IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</p>
+  </center></h1>
 <br>
 </div>
   <div class="container theme-showcase" role="main">
 <div class="jumbotron">
-<center><h2 class="display-4"><b>You are not a valid user</b></h2></center>
-<center><img src="images1.jpg" height="100" width="150"></center>
+<center><h2 class="display-4"><b><br>
+  आप सही उपयोगकर्ता नही हैं | <br>
+</b> You are not a valid user.</h2>
+</center>
+<center><img src="failed.jpg" height="100" width="150"></center>
 </div>
 
 
 <center><b>
-<input type="button" class="btn btn-3" name="Try Again" value="Try Again" onClick="parent.open('ind.php')"></b>
+<input type="button" class="btn btn-3" name="Try Again" value="पुनः प्रयास करें / Try Again" onClick="parent.open('ind.php')"></b>
 </center><br>
 
 </div>
-</body> <br><br><br><br><br><br><br> <br><br><br><br><br><center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
+</body> <center><div class="footer"><h4>Designed and Developed by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;</h4></div></center>
 </html>

@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width ,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=10">
  <link href="css/bootstrap.min.css" rel="stylesheet">
+ <script src="js/jquery-1.11.3.min.js"></script>
+ <script src="main.js" type="text/javascript"></script>
   <script src="jquery/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   
@@ -96,7 +98,7 @@ h2{
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
+  color: black;
  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
   box-shadow: 0 0 20px #eee;
   border-radius: 20px;
@@ -124,9 +126,7 @@ hr{
 	border-color: red;
 }
 
-.table1 {color:black;
-	border-color:black;
-	border-style:solid;
+.table1 {
 	margin-left:10px;
 	margin-right:10px;
 	border-width:5px;
@@ -151,27 +151,56 @@ color:#0066FF;
 		padding-top:20px;
 		padding-bottom:20px;
      }
+.btn1 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 40px;
+   padding-right: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+.left {color: blue;}
+.btn2 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
 </style>
 </head>
 <body>
 
-<h1><big><div class="logo"><img  src="logo.png"  class="img-circle"></div><center>&nbsp;लेज़र विज्ञान और प्रोद्योगिकी केंन्द्र<br>
-<b>GRIEVANCE REDRESSAL SYSTEM</b></big></h1></center>
+<h1><big><div class="logo"><img  src="logo.png"  class="img-circle"></div>
+<center>&nbsp;<big><big><b>आई.टी एवं आई.एस शिकायत निवारण प्रणाली </b></big></big><b></b><br>
+IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</big></h1>
+</center>
 <br>
 <div class= "container"><br>
 <div class="box"><br>
-<div class="text"><h2 ><b><center><br>
-शिकायत पंजीकरण फॉर्म <br>
+<div class="text"><h2 ><center><br>
+<b>शिकायत पंजीकरण फॉर्म </b><br>
     COMPLAINT REGISTRATION FORM<br>
-</center></b></h2></div>
+</center></h2></div>
 <br>
 <br>
 <div class="table1"><center>
 <h3><center>
-   <B> उपयोगकर्ता विवरण<br>
+   <B> उपयोगकर्ता विवरण</B><br>
 USER DETAILS
-</CENTER></B></h3>
-<BR>
+</CENTER></h3>
+
 <?php
  $userid=$_POST['userid'];
   $userpass=$_POST['userpass'];
@@ -208,12 +237,7 @@ $sql="select * from logins where Login_id='$userid';";
 
 function imagechange()
 {
-document.all.empsign.value="<?=$image1;?>";	
-document.all.empsign.src="<?=$image1;?>";
-document.all.sign_flag.value="1";	
- 
-		var x = document.getElementById('sign');
-	//	x.style.display="block";
+
 		document.getElementById('submit').disabled= false; 
 	
     //get_sign()
@@ -221,27 +245,12 @@ document.all.sign_flag.value="1";
 
 
 //function get_sign(){
-//document.all.img.value="<?=$image1?>"
+//document.all.img.value="<?=$image1?>"  
 
 //}
 
 }
-function validate(){
-if (document.all.sign_flag.value != "1")
-	{
-		if(confirm("Error: You  forgot to enter your signature by pressing signature button. Press OK to rectify this error OR press Cancel to abort this leave application."))  
-		{
-				
-				return false;
-				window.history.back();
-		}
-	} 
-		else
-		{
-			
-			return true;
-		}
-}
+
 </script>
 
 <form action="insert.php"  method="POST"> 
@@ -250,18 +259,15 @@ if (document.all.sign_flag.value != "1")
   <div class="row1">
     <tr>
       <div class="content">
-	  <td><b>नाम<br>
-        NAME</b></td>
+	  <td class="left"><b>नाम</b> <br>NAME</td>
 		</div>
       <td><?php  echo $name; ?>
           <input type="hidden" name="name" value="<?php  echo $name; ?>">
       </td>
-    </tr>
   </div>
   <div class="row2">
-    <tr>
-     <div class="content"> <td><b>पद<br>
-        DESIGNATION</b></td></div>
+     <div class="content"> <td class="left"><b>पद</b><br>DESIGNATION</td>
+     </div>
       <td><?php  echo $designation; ?>
           <input type="hidden" name="desig" value="<?php  echo $designation; ?>">
       </td>
@@ -269,45 +275,37 @@ if (document.all.sign_flag.value != "1")
   </div>
   <tr>
    <div class="content"> 
-   <td><b>समूह का नाम<br>
-      GROUP NAME</b></td>
+   <td class="left"><b>विभाग का नाम</b> <br>GROUP NAME</td>
 	  </div>   
 	   <td><?php  echo $groupname; ?>
     </td>
-  </tr>
-  <tr>
-   <div class="content"> <td><b>विस्तार संख्या <br>
-      EXTENSION NUMBER</b></td></div>
+   <div class="content"> <td class="left"><b>विस्तार संख्या </b><br> EXTENSION NUMBER</td>
+   </div>
     <td><input name="ext" type="text" method="post" required>
     </td>
   </tr>
 </table>
 </div>
-<br>
-
-
-
-
-
-<br>
 <center>
 <h3><center>
- <br>   शिकायत विवरण<B>
-COMPLAINT DETAILS</CENTER></B></h3>
+ <b>शिकायत विवरण</B><br>
+COMPLAINT DETAILS</CENTER></h3>
 <br>
 
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<div class="content"><td><b>विषय<br>
-  SUBJECT</b></td></div>
+<div class="content">
+  <td class="left"><b>विषय</b> / SUBJECT</td>
+</div>
 <td><textarea size="5"name="subject" method="post" required></textarea>
 </tr></td>
 </div>
 <div class="row2">
 <tr>
-<div class="content"><td><b>विभाग<br>
-  DEPARTMENT</b></td></div>
+<div class="content">
+  <td class="left"><b>विभाग</b>/ / DEPARTMENT</td>
+</div>
 
 <td><select name='drname' size="1" onChange='drchange()' id='selected' required>
   <option selected>-Select-</option>
@@ -317,13 +315,15 @@ COMPLAINT DETAILS</CENTER></B></h3>
 </tr>
 </div>
 <tr>
-<div class="content"><td><b>विवरण<br>
-  DESCRIPTION</b></td></div>
+<div class="content">
+  <td class="left"><b>विवरण</b> / DESCRIPTION</td>
+</div>
 <td><textarea rows="5" method="post" name="desc" required></textarea></td>
 </tr>
 <tr>
-<div class="content"><td><b>सुझाव<br>
-  SUGGESTION/REMARK</b></td></div>
+<div class="content">
+  <td class="left"><strong><b>टिप्पणी</b>  / </strong>REMARK</td>
+</div>
 <td><textarea rows="5" method="post" name="sugg" required></textarea ></td>
 </tr>
 </table>
@@ -341,33 +341,30 @@ COMPLAINT DETAILS</CENTER></B></h3>
 
 <div class="row1">
 <tr>
-<input type="button" class="btn btn-2" value="SIGNATURE/हस्ताशर" name="SIGN" id="sign"  onClick="imagechange()">
+<td><div class="click"><input type="button" class="btn btn-2" value="हस्ताक्षर  /  SIGNATURE" name="SIGN" id="sign" onClick="imagechange()" >
+    <span class="sign"><img src="<?=$image1;?>" name="empsign" id="empsign" height=50px width=100px></span></div></td>
 <input type="hidden" name="sign_flag" id='sign_flag' value="0">
 <input type="hidden" name="sign" value="<?=$image1;?>">
-<img src="" name="empsign" id="empsign" height=50px width=100px>
+<td><div class="sign"></div></td>
   
 
 
-</td>
+
 </tr>
 
 <div class="row2">
 <tr>
-<div class="content"><b>आगे प्रेषित/
-  FORWARD TO&nbsp;&nbsp;</b>
+<div class="content"><b>आगे प्रेषित</b> / 
+  FORWARD TO&nbsp;&nbsp;
 <input type="text" name="sub" id='fwd' required>
 	</div>			
 </tr>
 </div>
-<br>
 <div class="row3">
 <tr>
 <td>
-
-<br>
-<input type="submit" class="btn btn-3" name="submit" id="submit" onClick="validate()" disabled>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-</td>
+<input type="submit" class="btn btn-3" value="जमा करें  /  submit" name="submit" id="submit" disabled>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 </tr>
 <br>
 </div>
@@ -379,13 +376,14 @@ COMPLAINT DETAILS</CENTER></B></h3>
 
 
 </form>
+
 <form method="POST" action="page2.php">
-<center>  <input type="submit" name="Back" value="Back"  class="btn btn-3"></center>
+<center><input type="submit" name="Back" value="वापस  /  Back"  class="btn btn-3"></center>
   <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
 </form>
 <br>
 </div></div><br>
 </div>
 </body>
-<center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
+<center><footer style="color:red;"><h4>Designed and Developed by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;</h4></footer></center>
 </html>

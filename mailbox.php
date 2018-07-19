@@ -74,14 +74,19 @@ border-color:#000000;}
 background: linear-gradient(to right,lightblue,white,lightblue);
 margin-left: auto;
     margin-right: auto;
+	text-align: center;
 }
 .footer{
 	 padding-top:2px;
-	  background-color:#33CCFF;
+	
       color: white;
       opacity: 1;
 		padding-bottom:20px;
-	 }
+		
+		float: bottom;
+		bottom:0px;
+		width: 100%;
+			 }
 	  h4{
       background-color: black;
       color: white;
@@ -99,39 +104,57 @@ margin-left: auto;
   margin-bottom:10px;
 }
 th{border: 3px solid black;
-color:red;}
+color:red;
+text-align: center;}
+     .btn1 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
      </style>
 </head>
-<center><h1><big><div class="logo"><img  src="logo.png"  class="img-circle"></div>&nbsp;&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; &#2324;&#2352;&#2352; &#2346;&#2381;&#2352;&#2380;&#2381;&#2342;&#2381;&#2351;&#2379;&#2327;&#2367;&#2325;&#2368; &#2325;&#2375;&#2306;&#2344;&#2381;&#2342;&#2381;&#2352;&nbsp;&nbsp;&nbsp;<br>
-<b> GRIEVANCE REDRESSAL SYSTEM</b></big></h1></center>
+<center><h1><big><div class="logo"><img  src="logo.png"  class="img-circle"></div>
+      <big><b>आई.टी एवं आई.एस शिकायत निवारण प्रणाली  </b></big><b></b><br>
+IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</big></h1>
+</center>
 <br>
 <div class="mailbox">
 <h2><b><center>
     
-      <b> &#2350;&#2375;&#2354; &#2348;&#2379;&#2325;&#2381;&#2360;</b>      <br>
+      <b> <br>
+    मेल बॉक्स</b>      <br>
     MAILBOX
-</center></b></h2> </div><br>
+</center></h2> </div>
 <div class="container"><br>
 <table align="center" class="table table-hover">
 <thead>
 <tr>
-<th size="18"align="center">&#2360;.&#2344;<br>
+<th size="18"align="center">क्रमांक<br>
   S.no</th>
-<th align="center">&#2358;&#2367;&#2325;&#2366;&#2351;&#2366;&#2340; <br>
+<th align="center"><b>&#2358;&#2367;&#2325;&#2366;&#2351;&#2366;&#2340; संख्या</b> <br>
   Complaint no</th>
-<th align="center">&#2346;&#2342;<br>
+<th align="center"><strong>नाम</strong><br>
   Name</th> 
 
-<th align="center">&#2346;&#2342;<br>
+<th align="center"><b>&#2346;&#2342;</b><br>
   Designation</th> 
-<th align="center">&#2358;&#2367;&#2325;&#2366;&#2351;&#2366;&#2340; &#2325;&#2368; &#2340;&#2366;&#2352;&#2367;&#2325;<br>
-  Date of complaint</th>
+<th align="center"><b>शिकायत की तारीख एवं समय<br>
+  Date and Time of Complaint</th>
+  
 <th align="center">&#2357;&#2367;&#2359;&#2351;<br>
   Subject</th>
 
-<th align="center"><br>
+<th align="center">स्थिति<br>
   Status</th>
-<th align="center">&#2342;&#2375;&#2326;<br>
+<th align="center">देखें<br>
   View</th>
 </tr>
 </thead>
@@ -148,7 +171,8 @@ if(!empty($_POST['status'])){
 $status=$_POST['status'];
 $reqno=$_POST['reqno'];
 $remark=$_POST['remark'];
-$sql="update user_complaint set status='$status',remark='$remark' where reqno='$reqno';";
+$date = date('d-m-Y H:i:s');
+$sql="update user_complaint set status='$status',remark='$remark',action_date='$date' where reqno='$reqno';";
 $result=odbc_exec($conn, $sql);
 }
 $sql="select * from user_complaint where fwd='$userid' order by reqno desc;";
@@ -167,6 +191,7 @@ echo "<td>".$sno."</td>";
 echo "<td>".odbc_result($result,'name')."</td>";
 echo "<td>".odbc_result($result,'desig')."</td>";
 echo "<td>".odbc_result($result,'user_date')."</td>";
+
 echo "<td>".odbc_result($result,'subject')."</td>";
 
 echo "<td>".odbc_result($result,'status')."</td>";	
@@ -187,7 +212,7 @@ echo "<td>";
 	<?php
 		echo "</td>";
 
-	//$_SESSION['uid']=$_POST['submit $id'];
+	//$_SESSION['uid']=$_POST['submit $id'];=
 	echo "</tr>";
 	 }
 }
@@ -209,15 +234,14 @@ echo "<td>";
 </div>
 <center>
 <form method="POST" action="page2.php">
-  <input type="submit" name="Back" value="Back"  class="btn btn-3">
+  <input type="submit" name="Back" value="वापस / Back"  class="btn btn-3">
+  <input type="submit" name="logout" value="लॉग आउट / LOGOUT"  class="btn btn-3" onClick="parent.open('logout.php')">
   <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
 </form>
- <input type="submit" name="logout" value="LOGOUT"  class="btn btn-3" onClick="logout.php">
 </center>
 
            
-   
-   
+  
  
- </body><center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
+ </body><center><div class="footer"><h4>Designed and developed by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;</h4></div></center>
 </html>

@@ -10,8 +10,6 @@
    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
      <link href="theme.css" rel="stylesheet">
     <link href="css/hello.css" rel="stylesheet">
-	<script src="js/jquery-1.11.3.min.js"></script>
- <script src="main.js" type="text/javascript"></script>
 
 <style>
 
@@ -133,11 +131,6 @@ border-color:#000000;
 
 
 }
-.comp{
-text-align:right;
-font-weight:bold;
-font-size:400%;
-}
     h4{
       background-color: black;
       color: white;
@@ -147,16 +140,11 @@ font-size:400%;
      }
 	 .footer{
 	 padding-top:2px;
-	
+	  background-color:#33CCFF;
       color: white;
       opacity: 1;
 		padding-bottom:20px;
-		
-		float: bottom;
-		bottom:0px;
-		width: 100%;
-			 }
-
+	 }
   h4{
       background-color: black;
       color: white;
@@ -164,14 +152,28 @@ font-size:400%;
 		padding-top:20px;
 		padding-bottom:20px;
      }
-	 .comp{
-text-align:center;
-font-weight:bold;
-font-size:150%;
-color:Blue;
-}
-.left {color: Blue;}	
+	 .footer{
+	 padding-top:2px;
+	  background-color:#33CCFF;
+      color: white;
+      opacity: 1;
+		padding-bottom:20px;
+	 }
 
+
+.btn1 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+ /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
 </style>
  <SCRIPT LANGUAGE="JAVASCRIPT">
   //function drchange()
@@ -207,46 +209,38 @@ $conn=odbc_connect($connection, $user, $pass);
 		$extensionno=odbc_result($result, 'ext_no');
 		$sub=odbc_result($result, 'subject');
 		$description=odbc_result($result, 'description');
-		$user_sign=odbc_result($result, 'user_sign');
-		$date=odbc_result($result, 'user_date');
 	  }
-	  $sql="select * from logins where Login_id='$userid';";
-	  $result=odbc_exec($conn,$sql);
-	  while(odbc_fetch_row($result)){
-	    $action_sign=odbc_result($result,'signature');
-	  }
-	  $sql="update user_complaint set action_sign='$action_sign' where reqno='$reqno';";
-	  $result=odbc_exec($conn,$sql);
 	
 
 ?>
 <h1><big><div class="logo"><img  src="logo.png"  class="img-circle"></div><center>
-  &nbsp;<span class="logo">&nbsp;<big><b>आई.टी एवं आई.एस शिकायत निवारण प्रणाली </span></b></big><br>
-&nbsp;IT &amp; IS GRIEVANCE REDRESSAL SYSTEM
-</center></big></h1>
+      &nbsp;<span class="logo"><big>शिकायत निवारण प्रणाली </big>&nbsp;&nbsp;&nbsp;</span>&nbsp;&nbsp;&nbsp;<br>
+&nbsp;<b>GRIEVANCE REDRESSAL SYSTEM</b></center></big></h1>
 
 <br>
 <div class= "container"><br>
 <div class="box"><br>
 <div class="text"><h2><b><center>
       <br>
-      <b>शिकायत फॉर्म </b><br>
-      COMPLAINT FORM
+      <b>शिकायत पंजीकरण फॉर्म </b><br>
+      COMPLAINT REGISTRATION FORM
 </center></b></h2></div>
 
 <center>
-<div class="comp">&nbsp;शिकायत संख्या / COMPLAINT NO. :<?php echo  $reqno; ?></div>
-
 <h3><center>
-  उपयोगकर्ता विवरण<B><B><br>
-USER DETAILS </b></CENTER></B></H3>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<form action="mailbox.php" method="POST"> 
+  उपयोगकर्ता विवरण<B><br>
+<B><br>
+USER DETAILS</CENTER></B></H3>
+<BR>
+
+ 
+ 
+ <form action="mailbox.php" method="POST"> 
  <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?= $userid;?>" >
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<td class="left"><b>नाम<br>
+<td><b>नाम<br>
   NAME</b></td>
 <td>
 <?php  echo $name; ?>
@@ -255,7 +249,7 @@ USER DETAILS </b></CENTER></B></H3>
 </div>
 <div class="row2">
 <tr>
-<td class="left"><b>पद<br>
+<td><b>पद<br>
   DESIGNATION</b></td>
 <td><?php  echo $designation; ?>
 </td>
@@ -263,8 +257,8 @@ USER DETAILS </b></CENTER></B></H3>
 </div>
 
 <tr>
-<td class="left"><p><b>विस्तार संख्या <br>
-    EXTENSION NUMBER</b></p></td>
+<td><p>&nbsp;</p>
+  <p><b>विस्तार संख्या EXTENSION NUMBER</b></p></td>
 <td> <?php  echo $extensionno ; ?></td>
 </tr>
 </table></center>
@@ -278,7 +272,7 @@ USER DETAILS </b></CENTER></B></H3>
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<td class="left"><b>विषय<br>
+<td><b>विषय<br>
   SUBJECT</b></td>
 <td><?php  echo $sub ; ?></td>
 </tr>
@@ -287,23 +281,11 @@ USER DETAILS </b></CENTER></B></H3>
 
 </div>
 <tr>
-<td class="left"><b>विवरण<br>
+<td><b>विवरण<br>
   DESCRIPTION</b></td>
 <td><?php  echo $description ; ?></td>
 </tr>
-<tr>
-<td class="left"><b><br>
-    <br>
-    <b>शिकायत</b> द्वारा<br>
-    COMPLAINT BY</b></td>
-<td><img src="<?=$user_sign;?>" height=50px width=100px></td>
-</tr>
-<tr>
-<td class="left"><strong>शिकायत की तारीख एवं समय</strong><br>
-  DATE AND TIME OF COMPLAINT</td>
-<td><?php  echo $date; ?></td>
-</tr>
-<tr>
+
 </table>
 </center>
 <br>
@@ -313,23 +295,18 @@ USER DETAILS </b></CENTER></B></H3>
 <table class="table table-bordered">
 <div class="row1">
 <tr>
- <td class="left"><b>की जाने वाली कार्यवाई<br>
+ <td><b>एक्शन टेकेन<br>
    ACTION TAKEN</b></td>
  <td><select  name="status" >
   <option selected>-Select-</option>
-  <option value="ACCEPTED" method="post">ACCEPTED</option>
+  <option value="ACCEPTED" method="post">ACCEPTED/</option>
   <option value="REJECTED" method="post">REJECTED</option>
 </select>
 </td>
 <input type ="hidden" name="reqno" value="<?php  echo $reqno ; ?>">
 </tr>
 <tr>
-<td><b><br>
-  <div class="click"><input type="button" class="btn btn-2" value="हस्ताक्षर /  SIGNATURE" name="SIGN" id="sign"></div></td>
-<td><div class="sign"><img src="<?=$action_sign;?>" height=50px width=100px></div></b></td>
-</tr>
-<tr>
-<td class="left"><b><strong> </strong><strong><b>टिप्पणी</b></strong><br>
+<td><b>रेमार्क<br>
   REMARKS</b></td>
 <td>
 <textarea rows="3" method="post" name="remark"></textarea></td>
@@ -341,11 +318,13 @@ USER DETAILS </b></CENTER></B></H3>
 
 </table>
 </center><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
-<center><input type="submit" class="btn btn-3" name="SUBMIT" value="जमा करे  /  SUBMIT" ></center>
+<center>
+  <input type="submit" class="btn btn-3" name="SUBMIT" value="जमा करें/SUBMIT" >
+</center><center>
 </form>
 </div>
 <br>
 </div><br>
 </div>
-</body><center><div class="footer"><h4>Designed and Developed by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;</h4></div></center>
+</body><center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
 </html>

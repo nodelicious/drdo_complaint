@@ -58,19 +58,24 @@ body{
      }
 	 .footer{
 	 padding-top:2px;
-	  background-color:#33CCFF;
+	
       color: white;
       opacity: 1;
 		padding-bottom:20px;
-	 }
-	 .logo img{
+		
+		float: bottom;
+		bottom:0px;
+		width: 100%;
+			 }
+.logo img{
   display: block;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   float: left;
   margin-left:20px;
-  margin-top:10px;
+  margin-top:20px;
 }
+
 </style>
 
 
@@ -95,20 +100,28 @@ $largestNumber =  odbc_result($userquery, 'max');
 <meta http-equiv="Content-Type" content="text/css" charset="UTF-8">
 <div class="header">
 <div class="logo"><img  src="logo.png" height="100px" width="100px" class="img-circle" align="left"></div>
-<h1><b><center><u>&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; &#2324;&#2352; &#2346;&#2381;&#2352;&#2379;&#2342;&#2381;&#2351;&#2379;&#2327;&#2367;&#2325;&#2368; &#2325;&#2375;&#2306;न्&#2342;&#2381;&#2352;&nbsp;&nbsp;&nbsp;<br>GRIEVANCE REDRESSAL SYSTEM</u></center></b></h1>
+<h1><center>
+  <big><b><big><br>
+  <big><b>आई.टी एवं आई.एस शिकायत निवारण प्रणाली </b></big></big></b></big><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IT &amp; IS GRIEVANCE REDRESSAL SYSTEM
+</center></h1>
 <br>
 </div>
 <div class="container theme-showcase" role="main">
 <div class="jumbotron">
 
-<center><h2 class="display-4"> <u> <big>???? ??????? ?? ???????????? ??????</big><br><b>complaint number <?php echo $largestNumber;?> &nbsp;has been sent successfully</b></h2></center>
-<center><img src="complaint1.png" height="100" width="150"></center>
+<center>
+  <h2 class="display-4"> <br>
+   <b> शिकायत संख्या <?php echo $largestNumber;?> सफलतापूर्वक दर्ज कर दी गई है ।</b><br>
+    complaint number <?php echo $largestNumber;?> &nbsp;has been submitted successfully.</h2>
+</center>
+<center><img src="complaint_succ.png" height="100" width="150"></center>
 </div>
 
 <center>
-<input type="button" class="btn btn-3" name="Log Out" value="LOGOUT" onClick="parent.open('logout.php')" >
+<input type="button" class="btn btn-3" name="Log Out" value="लॉग आउट  /  LOGOUT" onClick="parent.open('logout.php')" >
 </center><br>
 </div>
  <br><br><br><br><br><br><br> <br>
-</body> <center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
+</body> <center><div class="footer"><h4>Designed and Developed  by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></div></center>
 </html>

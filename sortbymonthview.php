@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width ,initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=10">
 <link rel="stylesheet" type="text/css">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-     <link href="theme.css" rel="stylesheet">
-    <link href="css/hello.css" rel="stylesheet">
+<link href="../complaint/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../complaint/css/bootstrap-theme.min.css" rel="stylesheet">
+     <link href="../complaint/theme.css" rel="stylesheet">
+    <link href="../complaint/css/hello.css" rel="stylesheet">
 
 <style>
 .container{
-background-image: url("tile.jpeg");
+background-image: url(../complaint/tile.jpeg);
 opacity:0.9;
 
 }
@@ -184,6 +184,7 @@ color: Blue;
 <body>
 <?php
   $userid=$_POST['userid'];
+    $monthentered=$_POST['month'];
 	   $reqno=$_POST['req'];
 	    $userpass=$_POST['userpass'];
 
@@ -219,8 +220,8 @@ $conn=odbc_connect($connection, $user, $pass);
 	
 
 ?>
-<center><h1><big><div class="logo"><big><big><big><big><img  src="logo.png" width="155"  class="img-circle"></big></big></big></big></div>
-      <span class="logo"><big><b>आई.टी एवं आई.एस </b><b>शिकायत निवारण प्रणाली </b></big>&nbsp;&nbsp;&nbsp;</span><br>
+<center><h1><big><div class="logo"><big><big><big><big><img  src="../complaint/logo.png" width="155"  class="img-circle"></big></big></big></big></div>
+      <span class="logo"><big><b>&#2310;&#2312;.&#2335;&#2368; &#2319;&#2357;&#2306; &#2310;&#2312;.&#2319;&#2360; </b><b>&#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2344;&#2367;&#2357;&#2366;&#2352;&#2339; &#2346;&#2381;&#2352;&#2339;&#2366;&#2354;&#2368; </b></big>&nbsp;&nbsp;&nbsp;</span><br>
       &nbsp;IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</big></h1>
 </center>
 <br>
@@ -232,7 +233,7 @@ $conn=odbc_connect($connection, $user, $pass);
    <div class="text">   <h2 ><b>
         <center>
           <br>
-         <b> शिकायत स्थिति </b><br>
+         <b> &#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2360;&#2381;&#2341;&#2367;&#2340;&#2367; </b><br>
       COMPLAINT STATUS
 </center>
       </b></h2></div>
@@ -241,16 +242,14 @@ $conn=odbc_connect($connection, $user, $pass);
 
 <center>
 <div class="comp">
-  <p>स्थिति / STATUS : <?php echo $status ; ?> </p>
-  <p>&nbsp;</p>
-  
-  <p>शिकायत संख्या / COMPLAINT NO. : <?php echo  $reqno; ?></p>
+  <p>&#2360;&#2381;&#2341;&#2367;&#2340;&#2367; / STATUS : <?php echo $status ; ?> </p>
+  <p>&#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366; / COMPLAINT NO. : <?php echo  $reqno; ?></p>
   </div>
 
 <h3><center>
     <h3>
       <center>
-      <b> उपयोगकर्ता विवरण</b><br>
+      <b> &#2313;&#2346;&#2351;&#2379;&#2327;&#2325;&#2352;&#2381;&#2340;&#2366; &#2357;&#2367;&#2357;&#2352;&#2339;</b><br>
         USER DETAILS
       </CENTER>
     </H3>
@@ -260,11 +259,11 @@ $conn=odbc_connect($connection, $user, $pass);
 
  
  
- <form action="status.php" method="POST"> 
+ <form action="sortbymonth2.php" method="POST"> 
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<div class="text"><td class="left"><b>नाम</b><br>
+<div class="text"><td class="left"><b>&#2344;&#2366;&#2350;</b><br>
   NAME</td>
 <td>
 <?php  echo $name; ?>
@@ -273,7 +272,7 @@ $conn=odbc_connect($connection, $user, $pass);
 </div>
 <div class="row2">
 <tr>
-<td class="left"><b>पद</b><br>
+<td class="left"><b>&#2346;&#2342;</b><br>
   DESIGNATION</td>
 <td><?php  echo $designation; ?>
 </td>
@@ -281,14 +280,14 @@ $conn=odbc_connect($connection, $user, $pass);
 </div>
 
 <tr>
-<td class="left"><b>विस्तार संख्या </b><br>
+<td class="left"><b>&#2357;&#2367;&#2360;&#2381;&#2340;&#2366;&#2352; &#2360;&#2306;&#2326;&#2381;&#2351;&#2366; </b><br>
   EXTENSION NUMBER</td>
 <td> <?php  echo $extensionno ; ?></td>
 </tr>
 </table></center>
 <br>
 <center>
-<h3><b>शिकायत विवरण</b><br>
+<h3><b>&#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2357;&#2367;&#2357;&#2352;&#2339;</b><br>
    COMPLAINT DETAILS
   </H3>
 <br>
@@ -296,24 +295,24 @@ $conn=odbc_connect($connection, $user, $pass);
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<td class="left"><b>विषय</b><br>
+<td class="left"><b>&#2357;&#2367;&#2359;&#2351;</b><br>
   SUBJECT</td>
 <td><?php  echo $sub ; ?></td>
 </tr>
 </div>
 
 <tr>
-<td class="left"><b>विवरण</b><br>
+<td class="left"><b>&#2357;&#2367;&#2357;&#2352;&#2339;</b><br>
   DESCRIPTION</td>
 <td><?php  echo $description ; ?></td>
 </tr>
 <tr>
-<td class="left"><b> शिकायत कर्ता </b><br>
+<td class="left"><b> &#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2325;&#2352;&#2381;&#2340;&#2366; </b><br>
   COMPLAINT BY</td>
-<td><img src="<?=$user_sign;?>" height="75px" width="150px"   ></td>
+<td><img src="<?=$user_sign;?>" height="50px" width="50px"   ></td>
 </tr>
 <tr>
-<td class="left"><strong>शिकायत की तारीख एवं समय</strong><br>
+<td class="left"><strong>&#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326; &#2319;&#2357;&#2306; &#2360;&#2350;&#2351;</strong><br>
   DATE AND TIME OF COMPLAINT</td>
 <td><?php  echo $date; ?></td>
 </tr>
@@ -336,23 +335,23 @@ if($actiondate!=NULL){ ?>
 
 </tr>
 <tr>
- <td class="left"><b><strong>कार्यवाई</strong> की तारीख</b><br>
+ <td class="left"><b>&#2325;&#2366;&#2352;&#2381;&#2352;&#2357;&#2366;&#2312; &#2325;&#2368; &#2340;&#2366;&#2352;&#2368;&#2326;</b><br>
    ACTION TAKEN ON</td>
  <td><?php  echo $actiondate ; ?>
 </td>
 
 </tr>
 <tr>
-<td class="left"><strong>टिप्पणी</strong><br>
+<td class="left"><strong>&#2335;&#2367;&#2346;&#2381;&#2346;&#2339;&#2368;</strong><br>
   REMARKS</td>
 <td>
 <?php  echo $remark ; ?></td>
 </tr>
 <tr>
-<td class="left"><b><strong>कार्यवाही</strong> कर्ता </b><br>
+<td class="left"><b>&#2325;&#2366;&#2352;&#2381;&#2352;&#2357;&#2366;&#2312;&#2325;&#2352;&#2381;&#2340;&#2366; </b><br>
   ACTION TAKEN BY</td>
 <td>
-<img src="<?=$action_sign?>" height="75px" width="150px"></td>
+<img src="<?=$action_sign?>" height="50px" width="100px"></td>
 </tr>
 
 <?php } ?>
@@ -360,7 +359,7 @@ if($actiondate!=NULL){ ?>
 
 
 </table>
-</center><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
+</center><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>"> <INPUT TYPE="HIDDEN" NAME="month" VALUE="<?= $monthentered?>" >
 <center>
   <input type="submit" class="btn btn-3" name="SUBMIT" value="वापस  /  Back" > <input type="submit" name="logout" value="लॉग आउट  /  LOGOUT"  class="btn btn-3" onClick="parent.open('logout.php')">
 </center><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

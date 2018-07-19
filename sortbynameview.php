@@ -184,6 +184,7 @@ color: Blue;
 <body>
 <?php
   $userid=$_POST['userid'];
+    $namentered=$_POST['name'];
 	   $reqno=$_POST['req'];
 	    $userpass=$_POST['userpass'];
 
@@ -242,8 +243,6 @@ $conn=odbc_connect($connection, $user, $pass);
 <center>
 <div class="comp">
   <p>स्थिति / STATUS : <?php echo $status ; ?> </p>
-  <p>&nbsp;</p>
-  
   <p>शिकायत संख्या / COMPLAINT NO. : <?php echo  $reqno; ?></p>
   </div>
 
@@ -260,7 +259,7 @@ $conn=odbc_connect($connection, $user, $pass);
 
  
  
- <form action="status.php" method="POST"> 
+ <form action="sortbyname2.php" method="POST"> 
 <table class="table table-bordered">
 <div class="row1">
 <tr>
@@ -310,7 +309,7 @@ $conn=odbc_connect($connection, $user, $pass);
 <tr>
 <td class="left"><b> शिकायत कर्ता </b><br>
   COMPLAINT BY</td>
-<td><img src="<?=$user_sign;?>" height="75px" width="150px"   ></td>
+<td><img src="<?=$user_sign;?>" height="50px" width="50px"   ></td>
 </tr>
 <tr>
 <td class="left"><strong>शिकायत की तारीख एवं समय</strong><br>
@@ -336,7 +335,7 @@ if($actiondate!=NULL){ ?>
 
 </tr>
 <tr>
- <td class="left"><b><strong>कार्यवाई</strong> की तारीख</b><br>
+ <td class="left"><b>कार्रवाई की तारीख</b><br>
    ACTION TAKEN ON</td>
  <td><?php  echo $actiondate ; ?>
 </td>
@@ -349,10 +348,10 @@ if($actiondate!=NULL){ ?>
 <?php  echo $remark ; ?></td>
 </tr>
 <tr>
-<td class="left"><b><strong>कार्यवाही</strong> कर्ता </b><br>
+<td class="left"><b>कार्रवाईकर्ता </b><br>
   ACTION TAKEN BY</td>
 <td>
-<img src="<?=$action_sign?>" height="75px" width="150px"></td>
+<img src="<?=$action_sign?>" height="50px" width="100px"></td>
 </tr>
 
 <?php } ?>
@@ -360,10 +359,10 @@ if($actiondate!=NULL){ ?>
 
 
 </table>
-</center><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
+</center><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" ><INPUT TYPE="HIDDEN" NAME="name" VALUE="<?= $namentered?>" >
 <center>
   <input type="submit" class="btn btn-3" name="SUBMIT" value="वापस  /  Back" > <input type="submit" name="logout" value="लॉग आउट  /  LOGOUT"  class="btn btn-3" onClick="parent.open('logout.php')">
-</center><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 </form>

@@ -21,6 +21,7 @@
      <style type="text/css">
      body{
       background-image: url("fu.png");
+	  background-size: cover;
       }
      .container{
       background-color:white;
@@ -62,11 +63,15 @@
      }
 	 .footer{
 	 padding-top:2px;
-	  background-color:#33CCFF;
+	
       color: white;
       opacity: 1;
 		padding-bottom:20px;
-	 }
+		float: bottom;
+		bottom:0px;
+		width: 100%;
+			 }
+
      h3{
        background: -webkit-linear-gradient(#e96443, #904e95);
   -webkit-background-clip: text;
@@ -83,7 +88,7 @@
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
+  color: black;
  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
   box-shadow: 0 0 20px #eee;
   border-radius: 20px;
@@ -111,11 +116,11 @@ margin-right:505px;
 }
 .logo img{
   display: block;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   float: left;
   margin-left:20px;
-  margin-top:30px;
+  margin-top:10px;
 }
 .heading{
 background-color:green;
@@ -124,18 +129,26 @@ background-color:green;
   -webkit-text-fill-color: transparent;
   font-size: 32px;
 }
+.hindihead{
+font-size:140%;}
      </style>
 </head><body>
-<h1><big><div class="logo"><big><big><img  src="logo.png"  class="img-circle"></big></big></div>
-<b>&nbsp;</b><center>&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; &#2324;&#2352; &#2346;&#2381;&#2352;&#2379;&#2342;&#2381;&#2351;&#2379;&#2327;&#2367;&#2325;&#2368; &#2325;&#2375;&#2306;न्&#2342;&#2381;&#2352;&nbsp;&nbsp;&nbsp;<b><br>
-&nbsp;LASER SCIENCE & TECHNOLOGY CENTER</b></center></big></h1>
+<h1><div class="logo"><big><big><img  src="logo.png"  class="img-circle"></big></big></div>
+<b>&nbsp;</b><center>
+<b> <big> <div class="hindihead">&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; एवं प्रौद्योगिकी केंद्र&nbsp;&nbsp;&nbsp;</b></big><br>
+</div>
+&nbsp;LASER SCIENCE & TECHNOLOGY CENTER</center></h1>
   
 <br>
  
 
   
 <br>
-<CENTER><div class="head"><h3><b>GRIEVANCE REDRESSAL SYSTEM </b></h3></div></CENTER>
+<CENTER><div class="head"><h3><b><br>
+<b><big><b>आई.टी एवं आई.एस </b>शिकायत निवारण प्रणाली </big></b><br>
+   IT &amp; IS GRIEVANCE REDRESSAL SYSTEM
+   </center></big></h1></b></h3>
+</div></CENTER>
 
  <br>
  <div class="container">
@@ -143,8 +156,8 @@ background-color:green;
 
           <h3 style="color:blue;"><b><center>
             <br>
-            <div class="heading" >    <p>  लॉगिन <br>LOGIN</p></div>
-      </center></b></h3><BR>
+            <div class="heading" >    <p>  लॉगिन </b><br>LOGIN</p></div>
+      </center></h3><BR>
         <CENTER>
         <form class="form-inline" method="POST" action="page2.php">
   <div class="form-group" >
@@ -165,13 +178,9 @@ background-color:green;
     <input type="password" name="userpass" method="POST" class="form-control"    required />
   </div><BR><br>
   <div class="has-success">
-  <div class="checkbox">
-    <label>
-     <p> <input type="checkbox" name="remember" id="checkboxSuccess" value=>
-     &#2351;&#2366;&#2342; रखे /REMEMBER ME!   </p> </label>
-  </div>
+ 
 </div><br>
-  <input type="submit" name="submit" value="submit/आगे बारे" class="btn btn-3">
+  <input type="submit" name="submit" value="जमा करें   /    SUBMIT" class="btn btn-3">
 </form></CENTER>
 
 
@@ -183,6 +192,6 @@ background-color:green;
    
   
  </body>
- <center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
+ <center><div class="footer"><h4>Designed and developed by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;</h4></div></center>
 </html>
         

@@ -134,17 +134,14 @@ color:#CC0000;
 		padding-top:20px;
 		padding-bottom:20px;
      }
-	  .footer{
+	 .footer{
 	 padding-top:2px;
-	
+	  background-color:#33CCFF;
       color: white;
       opacity: 1;
 		padding-bottom:20px;
-		
-		float: bottom;
-		bottom:0px;
-		width: 100%;
-			 }
+	 }
+
 .btn1 {  flex: 1 1 auto;
   margin: 20px;
   padding-left: 30px;
@@ -158,16 +155,6 @@ color:#CC0000;
   box-shadow: 0 0 20px #eee;
   border-radius: 20px;
 }
-.comp{
-
-font-weight:bold;
-font-size:150%;
-color: Blue;
-}
-.left {
-color: Blue;
-}
-
 </style>
  <SCRIPT LANGUAGE="JAVASCRIPT">
   //function drchange()
@@ -193,7 +180,7 @@ $pass='mis';
 $conn=odbc_connect($connection, $user, $pass);
 
 
-	   $sql="select * from user_complaint where reqno='$reqno'; ";
+	   $sql="select * from user_complaint where user_complaint.reqno='$reqno'; ";
 
 	$userquery=odbc_exec($conn,$sql);
 	
@@ -207,21 +194,12 @@ $conn=odbc_connect($connection, $user, $pass);
 		$status=odbc_result($userquery, 'status');
 		$remark=odbc_result($userquery, 'remark');
 		$description=odbc_result($userquery, 'description');
-		$actiondate=odbc_result($userquery, 'action_date');
-			$date=odbc_result($userquery, 'user_date');
 	  }
-	  $sql="select * from user_complaint where reqno='$reqno';";
-	  $result=odbc_exec($conn,$sql);
-	  while(odbc_fetch_row($result)){
-	    $action_sign=odbc_result($result,'action_sign');
-	  }
-	  
 	
 
 ?>
-<center><h1><big><div class="logo"><big><big><big><big><img  src="logo.png" width="155"  class="img-circle"></big></big></big></big></div>
-      <span class="logo"><big><b>आई.टी एवं आई.एस </b><b>शिकायत निवारण प्रणाली </b></big>&nbsp;&nbsp;&nbsp;</span><br>
-      &nbsp;IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</big></h1>
+<center><h1><big><div class="logo"><img  src="logo.png"  class="img-circle"></div> <span class="logo"><big>शिकायत निवारण प्रणाली </big>&nbsp;&nbsp;&nbsp;</span><br>
+&nbsp;<b>GRIEVANCE REDRESSAL SYSTEM</b></big></h1>
 </center>
 <br>
 <br>
@@ -231,31 +209,23 @@ $conn=odbc_connect($connection, $user, $pass);
 <h2><b><center>
    <div class="text">   <h2 ><b>
         <center>
-          <br>
-         <b> शिकायत स्थिति </b><br>
-      COMPLAINT STATUS
+          शिकायत पंजीकरण फॉर्म<br>
+      COMPLAINT REGISTRATION FORM
 </center>
       </b></h2></div>
       </center>
 </b></h2>
 
 <center>
-<div class="comp">
-  <p>स्थिति / STATUS : <?php echo $status ; ?> </p>
-  <p>&nbsp;</p>
-  
-  <p>शिकायत संख्या / COMPLAINT NO. : <?php echo  $reqno; ?></p>
-  </div>
-
 <h3><center>
     <h3>
       <center>
-      <b> उपयोगकर्ता विवरण</b><br>
-        USER DETAILS
+        उपयोगकर्ता विवरण<br>
+        <B>USER DETAILS
       </CENTER>
     </H3>
     </CENTER>
-</H3>
+</B></H3>
 <BR>
 
  
@@ -264,8 +234,8 @@ $conn=odbc_connect($connection, $user, $pass);
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<div class="text"><td class="left"><b>नाम</b><br>
-  NAME</td>
+<div class="text"><td><b>नाम<br>
+  NAME</b></td></div>
 <td>
 <?php  echo $name; ?>
 </td>
@@ -273,96 +243,73 @@ $conn=odbc_connect($connection, $user, $pass);
 </div>
 <div class="row2">
 <tr>
-<td class="left"><b>पद</b><br>
-  DESIGNATION</td>
+<td><b>पद<br>
+  DESIGNATION</b></td>
 <td><?php  echo $designation; ?>
 </td>
 </tr>
 </div>
 
 <tr>
-<td class="left"><b>विस्तार संख्या </b><br>
-  EXTENSION NUMBER</td>
+<td><b>विस्तार संख्या <br>
+  EXTENSION NUMBER</b></td>
 <td> <?php  echo $extensionno ; ?></td>
 </tr>
 </table></center>
 <br>
 <center>
-<h3><b>शिकायत विवरण</b><br>
+<h3>शिकायत विवरण<br>
    COMPLAINT DETAILS
-  </H3>
+  </B></H3>
 <br>
 
 <table class="table table-bordered">
 <div class="row1">
 <tr>
-<td class="left"><b>विषय</b><br>
-  SUBJECT</td>
+<td><b>विषय<br>
+  SUBJECT</b></td>
 <td><?php  echo $sub ; ?></td>
 </tr>
 </div>
 
 <tr>
-<td class="left"><b>विवरण</b><br>
-  DESCRIPTION</td>
+<td><b>विवरण<br>
+  DESCRIPTION</b></td>
 <td><?php  echo $description ; ?></td>
 </tr>
-<tr>
-<td class="left"><b> शिकायत कर्ता </b><br>
-  COMPLAINT BY</td>
-<td><img src="<?=$user_sign;?>" height="75px" width="150px"   ></td>
-</tr>
-<tr>
-<td class="left"><strong>शिकायत की तारीख एवं समय</strong><br>
-  DATE AND TIME OF COMPLAINT</td>
-<td><?php  echo $date; ?></td>
-</tr>
-<tr>
+
 </table>
 </center>
+<br>
+<center><img src="<?=$user_sign;?>" height="50px" width="50px"   ></center>
+<br>
 <div class="table3"><center>
 <table class="table table-bordered">
 <div class="row1">
 <tr>
 
 </tr>
-<?php
-if($actiondate!=NULL){ ?>
 <tr>
- <td class="left"><strong>की जाने वाली कार्यवाई</strong><br>
-   ACTION TAKEN</td>
+ <td><b>ACTION TAKEN</b></td>
  <td><?php  echo $status ; ?>
 </td>
 
 </tr>
 <tr>
- <td class="left"><b><strong>कार्यवाई</strong> की तारीख</b><br>
-   ACTION TAKEN ON</td>
- <td><?php  echo $actiondate ; ?>
-</td>
-
-</tr>
-<tr>
-<td class="left"><strong>टिप्पणी</strong><br>
-  REMARKS</td>
+<td><b>REMARKS</b></td>
 <td>
 <?php  echo $remark ; ?></td>
 </tr>
-<tr>
-<td class="left"><b><strong>कार्यवाही</strong> कर्ता </b><br>
-  ACTION TAKEN BY</td>
-<td>
-<img src="<?=$action_sign?>" height="75px" width="150px"></td>
-</tr>
 
-<?php } ?>
+
+
 
 
 
 </table>
 </center><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
 <center>
-  <input type="submit" class="btn btn-3" name="SUBMIT" value="वापस  /  Back" > <input type="submit" name="logout" value="लॉग आउट  /  LOGOUT"  class="btn btn-3" onClick="parent.open('logout.php')">
+  <input type="submit" class="btn btn-3" name="SUBMIT" value="वापस/Back" >
 </center><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
@@ -373,5 +320,5 @@ if($actiondate!=NULL){ ?>
 </br>
 </div>
 </body>
- <center><div class="footer"><h4>Designed and Developed by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;</h4></div></center>
+ <center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
 </html>

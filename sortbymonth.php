@@ -60,15 +60,20 @@ background-color:white;
      }
 	 .footer{
 	 padding-top:2px;
-	  background-color:#33CCFF;
+	
       color: white;
       opacity: 1;
 		padding-bottom:20px;
-	 }
+		
+		float: bottom;
+		bottom:0px;
+		width: 100%;
+			 }
+
 	 .logo img{
   display: block;
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   float: left;
   margin-left:20px;
   margin-top:30px;
@@ -81,29 +86,54 @@ background-color:white;
     
 
      }
+	 .hindi {
+   font-weight: bold;
+   width: 100%;
+
+}
+.eng{
+   font-weight: normal;
+   text-align:center;
+   font-size:
+}
 </style>
 
 
 
 </head>
 <body>
+<?php $userid=$_POST['userid'];
+  $userpass=$_POST['userpass'];?>
 <meta http-equiv="Content-Type" content="text/css" charset="UTF-8">
 <div class="header">
  <big><div class="logo"> <img  src="logo.png" height="80px" width="100px" class="img-circle" align="left"></div>
-  <h1><center><b><u>&nbsp;&nbsp;&nbsp;<b><br>GRIEVANCE REDRESSAL SYSTEM</u></b></center></h1>
+  <h1><center>
+    <b><big><br>
+    <div class="hindi"><big><big><b>आई.टी एवं आई.एस &#2358;&#2367;&#2325;&#2366;&#2351;&#2340; &#2344;&#2367;&#2357;&#2366;&#2352;&#2339; &#2346;&#2381;&#2352;&#2339;&#2366;&#2354;&#2368;</b></big></big ></div>
+    </big><b></b>
+  <div class="eng">IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</div>
+    </b>
+  </center></h1>
 <br>
 </div>
   <div class="container theme-showcase" role="main">
 <div class="jumbotron">
-<center><h2 class="display-4"><b>ENTER THE MONTH</b></h2></center>
-<center><form action="" method="POST"><input name="month" type="text"  required></form></center>
+<center>
+  <h2 class="display-4"><b><br>
+    <div class="hindi">&#2350;&#2361;&#2368;&#2344;&#2366; &#2342;&#2352;&#2381;&#2332; &#2325;&#2352;&#2375;&#2306; ।</div>
+    <br>
+  <div class="eng">ENTER THE MONTH</div></b></h2>
+</center>
+<center><form action="sortbymonth2.php" method="POST"> <input type="month" name="month" ><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" ><input type="submit" name="submit" value="जमा करें / submit" class="btn btn-3"></form></center>
 </div>
 
 
 <center><b>
-<input type="button" class="btn btn-3" name="back" value="BACK" onClick="parent.open('ind.php')"></b>
-</center><br>
+<form method="POST" action="report.php">
+  <input type="submit" name="Back" value="वापस / Back"  class="btn btn-3">
+  <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
+</form></center>
 
 </div>
-</body> <br><br><br><br><br><br><br> <br><br><br><br><br><center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
+</body> <center><div class="footer"><h4>Designed and developed by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;</h4></div></center>
 </html>

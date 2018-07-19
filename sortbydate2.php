@@ -12,16 +12,35 @@
   <link rel="stylesheet" href="jquery1.css">
   <script src="jquery2.js"></script>
   <script src="jquery3.js"></script>
-     <style type="text/css">
     
-     
+     <style>
+	  h4{
+      background-color: black;
+      color: white;
+      opacity: 1;
+		padding-top:20px;
+		padding-bottom:20px;
+     }
+	.footer{
+	 padding-top:2px;
+	
+      color: white;
+      opacity: 1;
+		padding-bottom:20px;
+		
+		float: bottom;
+		bottom:0px;
+		width: 100%;
+			 }
  
      h1{
       background-color: black;
       color: white;
       opacity: 0.9;
-padding-bottom:20px;
-padding-top:10px;
+	    padding-top:20px;
+	  padding-bottom:20px;
+    
+
      }
      h2{
        background: -webkit-linear-gradient(#e96443, #904e95);
@@ -53,148 +72,200 @@ padding-top:10px;
 .btn-3 {
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
 }
+
 body{
 
   background: linear-gradient(to bottom,green,lightblue,green);
 }
-table, th,tr,td{
+table,tr,td{
     border: 3px solid black;
 
 	
     margin-left: auto;
     margin-right: auto;
 }
-.mailbox{
-margin-left:400px;
-margin-right:400px;
-background-color:#FFCC33;
-border:solid;
-border-color:#000000;}
+th{border: 3px solid black;
+color:red;
+text-align:center;}
+     .btn1 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+     .btn2 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+     .btn3 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
+.logo img{
+  display: block;
+  height: 100px;
+  width: 100px;
+  float: left;
+ 
+}
 .container{
 background: linear-gradient(to right,lightblue,white,lightblue);
 margin-left: auto;
     margin-right: auto;
 }
-.footer{
-	 padding-top:2px;
-	  background-color:#33CCFF;
-      color: white;
-      opacity: 1;
-		padding-bottom:20px;
-	 }
-	  h4{
-      background-color: black;
-      color: white;
-      opacity: 1;
-		padding-top:20px;
-		padding-bottom:20px;
-     }
-	 .logo img{
-  display: block;
-  height: 100px;
-  width: 100px;
-  float: left;
-  margin-left:20px;
-  margin-top:10px;
-  margin-bottom:10px;
+.status{
+margin-left:420px;
+margin-right:420px;
+background-color:#FFCC33;
+border:solid;
+border-color:#000000;
 }
-th{border: 3px solid black;
-color:red;}
+     .btn4 {  flex: 1 1 auto;
+  margin: 20px;
+  padding-left: 30px;
+   padding-right: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: black;
+
+  box-shadow: 0 0 20px #eee;
+  border-radius: 20px;
+}
      </style>
 </head>
-<center><h1><big><div class="logo"><img  src="logo.png"  class="img-circle"></div>&nbsp;&#2354;&#2375;&#2395;&#2352; &#2357;&#2367;&#2332;&#2381;&#2334;&#2366;&#2344; &#2324;&#2352;&#2352; &#2346;&#2381;&#2352;&#2380;&#2381;&#2342;&#2381;&#2351;&#2379;&#2327;&#2367;&#2325;&#2368; &#2325;&#2375;&#2306;&#2344;&#2381;&#2342;&#2381;&#2352;&nbsp;&nbsp;&nbsp;<br>
-<b> GRIEVANCE REDRESSAL SYSTEM</b></big></h1></center>
+<h1><big>
+<div class="logo"><img  src="logo.png"  class="img-circle"><center>&nbsp;&nbsp;<big><big><b>आई.टी एवं आई.एस शिकायत निवारण प्रणाली </b></big></big>&nbsp;<big></big>&nbsp;&nbsp;&nbsp;<br>
+<b> IT &amp; IS GRIEVANCE REDRESSAL SYSTEM</b></b></big></div>
+</h1>
 <br>
-<div class="mailbox">
-<h2><b><center>
-    
-      <b> &#2350;&#2375;&#2354; &#2348;&#2379;&#2325;&#2381;&#2360;</b>      <br>
-    COMPLAINTS
-</center></b></h2> </div><br>
-<div class="container"><br>
+<b><center><div class="status">
+  <h2><br>
+    शिकायतें  <br>
+   <b> COMPLAINTS</b>
+</center></b></h2>
+</div>
+<div class="container">
+<br>
 <table align="center" class="table table-hover">
 <thead>
 <tr>
-<th size="18"align="center">&#2360;.&#2344;<br>
-  S.no</th>
-<th align="center">&#2358;&#2367;&#2325;&#2366;&#2351;&#2366;&#2340; <br>
-  Complaint no</th>
-<th align="center">&#2346;&#2342;<br>
-  Name</th> 
+<th size="18"align="center">क्रमांक<br>
+  S.no</td>
+<th align="center"><p>शिकायत संख्या</p>
+  <p>Complaint no</p></th>
+<th align="center">&#2344;&#2366;&#2350;<br>
+  Name</th>
 
 <th align="center">&#2346;&#2342;<br>
   Designation</th> 
-<th align="center">&#2358;&#2367;&#2325;&#2366;&#2351;&#2366;&#2340; &#2325;&#2368; &#2340;&#2366;&#2352;&#2367;&#2325;<br>
-  Date of complaint</th>
-<th align="center">&#2357;&#2367;&#2359;&#2351;<br>
-  Subject</th>
-
+<th align="center">शिकायत की तारीख एवं समय<br>
+  Date  and Time of complaint</th>
 <th align="center"><br>
+  <b>विषय</b><br>
+  Subject</th>
+<th align="center">स्थिति<br>
   Status</th>
-<th align="center">&#2342;&#2375;&#2326;<br>
+<th align="center"><b>कार्यवाई की तारीख़</b><br>
+  Action taken on</th>
+<th align="center">देखें<br>
   View</th>
+  <th align="center">प्रिंट<br>
+  Print</th>
 </tr>
 </thead>
-<tbody>
 <tr class="success">
 <?php
-$dateentered=$_POST['date'];
-$userid=$_POST['userid'];
+$date=$_POST['date'];
+$date1=date("d-m-Y",strtotime($date));
+ $userid=$_POST['userid'];
   $userpass=$_POST['userpass'];
 $connection='DRIVER={SQL SERVER};SERVER=lasteclab;dsn=mis;database=mis';
 $user='mis';
 $pass='mis';
 $conn=odbc_connect($connection, $user, $pass);
-if(!empty($_POST['status'])){
-$status=$_POST['status'];
-$reqno=$_POST['reqno'];
-$remark=$_POST['remark'];
-$sql="update user_complaint set status='$status',remark='$remark' where reqno='$reqno';";
-$result=odbc_exec($conn, $sql);
-}
-
-$sql="select * from user_complaint where user_complaint.date='$dateentered' order by reqno desc;";
+$sql="select * from user_complaint where (user_complaint.Login_id='$userid' or user_complaint.fwd='$userid') and (user_complaint.user_date like '%$date1%') order by reqno desc;";
 $result=odbc_exec($conn, $sql);
 $sno=0;
 while(odbc_fetch_row($result))
 {
   
-    $id=odbc_result($result, 'reqno');
-    $ch=odbc_result($result, 'status');
-if($ch!='ACCEPTED' && $ch!='REJECTED'){
-	$sno=$sno+1;
+    $id=odbc_result($result,'reqno');
+$sno=$sno+1;
+$date=odbc_result($result,'user_date');
+$status=odbc_result($result, 'status');
+	
+	
 	 echo "<tr>";
 echo "<td>".$sno."</td>";
 	 echo "<td>".odbc_result($result,'reqno')."</td>";
 echo "<td>".odbc_result($result,'name')."</td>";
+
 echo "<td>".odbc_result($result,'desig')."</td>";
 echo "<td>".odbc_result($result,'user_date')."</td>";
 echo "<td>".odbc_result($result,'subject')."</td>";
 
-echo "<td>".odbc_result($result,'status')."</td>";	
-echo "<td>";	
-//echo "</tr>";
+echo "<td>".$status."</td>";
+echo "<td>".odbc_result($result,'action_date')."</td>";
+
+	
+
+
+echo "<td>";
 	?>
-	<form method="post" action="view.php">			
-				<p align="center">
-				<INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?= $userid;?>" >
-				<INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
-				<INPUT TYPE="HIDDEN" NAME="req" VALUE="<?=$id?>" >
+	<form method="POST" action="sortbydateview.php">	
+			<INPUT TYPE="HIDDEN" NAME="req" VALUE="<?=odbc_result($result,'reqno')?>" >	<INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" ><INPUT TYPE="HIDDEN" NAME="date" VALUE="<?=$date?>" >				<p align="center">
 				<button type="submit" name="view" class="btn btn-success btn-md"/> 
 				<span class="glyphicon glyphicon-eye-open"></span>View MAIL</button></p>
-				<INPUT TYPE="HIDDEN" NAME="req" VALUE="<?=$id?>" >
-				</p>
-		</form>
 				
-	<?php
-		echo "</td>";
-
-	//$_SESSION['uid']=$_POST['submit $id'];
+				
+				</p>
+	</form>
+				<?php
+		echo "<td>";
+  if($status!="NEW"){
+?> 
+<form method="post" action="temp.php">
+<INPUT TYPE="HIDDEN" NAME="req" VALUE="<?=odbc_result($result,'reqno')?>" >	<INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" ><button type="submit" name="print" class="btn btn-success btn-md" /> 
+				<span class="glyphicon "></span>PRINT</button></p></form>	 
+	<?php } echo "</td>";
 	echo "</tr>";
-	 }
-}
-?> </form>
+	}
+	?>
+
+
 	 
+	
+				
+	
+	 
+
 	 
 	 
 	 
@@ -208,18 +279,38 @@ echo "<td>";
 
 
 </table>
-</div>
+
+
 <center>
 <form method="POST" action="sortbydate.php">
-  <input type="submit" name="Back" value="Back"  class="btn btn-3">
+  <input type="submit" name="Back" value="वापस/Back"  class="btn btn-3">
   <INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>" >
 </form>
- <input type="submit" name="logout" value="LOGOUT"  class="btn btn-3" onClick="logout.php">
+ <input type="submit" name="logout" value="लॉग आउट/LOGOUT"  class="btn btn-3" onClick="parent.open('logout.php')">
 </center>
+
+</div>       
+   </p>
+   
+ 
+ </body>
+  <center><div class="footer">
+    <h4>Designed and developed  by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;</h4>
+  </div></center>
+</html>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
 
            
    
    
  
- </body><center><footer style="color:red;"><h4>Prepared by IT & IS group&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php date_default_timezone_set("Asia/Kolkata");echo date('d/m/Y'); ?> &nbsp;<?php echo date('h:i:sa');?></h4></footer></center>
-</html>
