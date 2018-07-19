@@ -363,11 +363,11 @@ if($actiondate!=NULL){ ?>
 </center><INPUT TYPE="HIDDEN" NAME="userid" VALUE="<?=$userid?>" ><INPUT TYPE="HIDDEN" NAME="userpass" VALUE="<?= $userpass?>"> <INPUT TYPE="HIDDEN" NAME="year" VALUE="<?= $yearentered?>" ><INPUT TYPE="HIDDEN" NAME="reqno" VALUE="<?= $reqno?>" >
 <center>
   <input type="submit" class="btn btn-3" name="SUBMIT" value="वापस /  Back" > <input type="submit" name="logout" value="लौग आउट /  LOGOUT"  class="btn btn-3" onClick="parent.open('logout.php')">
-</center><center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 </form>
-</div></center>
+</div>
 <br>
 </div>
 </br>

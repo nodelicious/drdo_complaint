@@ -190,8 +190,8 @@ margin-left:20px;}
          <input name="submit3" type="submit" style="display: block; width:300px; height:300px; background-image:url(report2.jpg); border-width:5px ; border-color:#000000;" value=""   >
          </form></td></tr>
 	</center>
-				
-<td height="21"></div><?php } ?>	
+
+<td height="21"></div><</td>?php } ?>
 </table>
 	</center>
 <?php    if ($username!='9012' && $username!='1207'){
@@ -230,5 +230,5 @@ margin-left:20px;}
  else
  {
  	header('location:notvalid.php');
- }
+ }}
 ?>
